@@ -314,7 +314,7 @@ static tgtadm_err bs_longhorn_init(struct scsi_lu *lu, char *bsopts)
 	}
 	lh->size = size;
 	lh->request_timeout = request_timeout;
-	return bs_thread_open(info, bs_longhorn_request, nr_iothreads);
+	return bs_thread_open(info, bs_longhorn_request, 32);
 }
 
 static void bs_longhorn_exit(struct scsi_lu *lu)
